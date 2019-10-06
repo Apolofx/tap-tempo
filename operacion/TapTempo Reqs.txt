@@ -1,0 +1,4 @@
+1)Control por tap	OK
+2)Control por pot	OK
+3)Control por subdivision	FALTA
+4)Overflow para tap tempo	FALTA
