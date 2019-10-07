@@ -1,4 +1,11 @@
 1)Control por tap	OK
 2)Control por pot	OK
-3)Control por subdivision	FALTA
-4)Overflow para tap tempo	FALTA
+3)Comunicacion SPI con Digipot OK:
+	Aca teniamos mal el command byte. En los MCP41xxx, para modo Write y elecicon de Pote nro 1
+	se necesita mandar el command byte 0b00010001 primero y despues el data Byte
+3)Control por subdivision	FALTA:
+	Seguimos teniendo algun problemilla en el while loop de subDivision()
+4)Overflow para tap tempo	FALTA:
+	2 opciones posibles-->Overflow deja el pote en 255
+					   -->Overflow deja el tempo en el ultimo tappedTime
+					   

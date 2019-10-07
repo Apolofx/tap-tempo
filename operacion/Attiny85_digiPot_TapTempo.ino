@@ -13,8 +13,8 @@ vcc---//47k//-----+||(1uF)---gnd        esto nos da aprox 1Tau = 47 ms suficient
 RESET  Ain0 (D 5) PB5  1|    |8  Vcc
 CLK1   Ain3 (D 3) PB3  2|    |7  PB2 (D 2) Ain1  SCK  / USCK / SCL
 CLK0   Ain2 (D 4) PB4  3|    |6  PB1 (D 1) pwm1  MISO / DO
-GND  4|    |5  PB0 (D 0) pwm0  MOSI / DI / SDA
-+----+
+                  GND  4|    |5  PB0 (D 0) pwm0  MOSI / DI / SDA
+                        +----+
 */
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -42,8 +42,11 @@ void setup()
   ADCSRA |= (1 << 7);
   last_read = analogRead(A0);
   tappedTime = last_read;
+  digiPotWrite(tappedByte());
 }
-
+/************************************
+            MAIN LOOP
+************************************/
 void loop()
 {
   if (abs(analogRead(A0) - last_read) >= 4)
@@ -71,9 +74,9 @@ void loop()
     subDiv = 1.0;
     potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
     potRes_int = round(potRes);
-    if (potRes_int > 127)
+    if (potRes_int > 255)
     {
-      potRes_int = 127;
+      potRes_int = 255;
     }
     digiPotWrite(potRes_int);
     firstPress = false;
@@ -94,17 +97,18 @@ void ledBlink(float time, float div)
   // rutina de blink e indicador de sensando tiempo
   if (firstPress == true)
   {
-    PORTB &= ~(1 << ledPin); // como el led RGB es anodo comun, tengo que poner el pin en
+    PORTB |= (1 << ledPin); // como el led RGB es anodo comun, tengo que poner el pin en
     // current sink (nivel logico 0 o LOW) para que encienda
   }
   else
-  {
+  { 
     unsigned long currentMillis = millis(); // Rutina de parpadeo de LED
     if ((currentMillis - previousMillis) >= round(time*div))
     {
       previousMillis = currentMillis;
       PORTB ^= (1 << ledPin);
     }
+
   }
 }
 
@@ -118,9 +122,9 @@ void potTime(byte x)
   subDiv = 1;
   potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
   potRes_int = round(potRes);
-  if (potRes_int > 127)
+  if (potRes_int > 255)
   {
-    potRes_int = 127;
+    potRes_int = 255;
   }
   digiPotWrite(potRes_int);
   last_read = analogRead(x);
@@ -129,7 +133,7 @@ void potTime(byte x)
 void digiPotWrite(int value)
 {
   digitalWrite(CS, LOW);
-  shiftOut(dataPin, clockPin, MSBFIRST, highByte(value));
+  shiftOut(dataPin, clockPin, MSBFIRST, 0b00010001);
   shiftOut(dataPin, clockPin, MSBFIRST, lowByte(value));
   digitalWrite(CS, HIGH);
 }
@@ -166,14 +170,15 @@ float subDivision()
       {
         subDiv = 0.25; // 'tresillo de corchea'
       }
-    else
-    {
-    }
   }
   int actualTime = millis();
-  while((millis() - actualTime) < 50){}
+  while((millis() - actualTime) < 50){} 
   potRes = (a * pow((tappedTime * subDiv), 2.0) + b * (tappedTime * subDiv) + c);
   potRes_int = round(potRes);
+  if (potRes_int > 255)
+  {
+    potRes_int = 255;
+  }
   digiPotWrite(potRes_int);
   last_read = analogRead(A0);
   MCUCR |= (1 << ISC01); // Int en flanco descendente
@@ -191,6 +196,22 @@ void ledflash(int n)
     delay(80);
   }
 }
+
+byte tappedByte(){
+  potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
+  potRes_int = round(potRes);
+  if (potRes_int > 255)
+  {
+    potRes_int = 255;
+  }
+  return potRes;
+}
+
+
+
+
+
+
 
 /************************************************************************
                 C O D I G O  E N  C O N S T R U C C I O N
