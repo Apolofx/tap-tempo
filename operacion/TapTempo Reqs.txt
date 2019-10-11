@@ -7,5 +7,6 @@
 	Seguimos teniendo algun problemilla en el while loop de subDivision()
 4)Overflow para tap tempo	FALTA:
 	2 opciones posibles-->Overflow deja el pote en 255
-					   -->Overflow deja el tempo en el ultimo tappedTime
+			   -->Overflow deja el tempo en el ultimo tappedTime
+			   -->Overflow deja el tempo en una subdivision del tempo marcado		
 					   
