@@ -4,9 +4,10 @@
 	Aca teniamos mal el command byte. En los MCP41xxx, para modo Write y elecicon de Pote nro 1
 	se necesita mandar el command byte 0b00010001 primero y despues el data Byte
 3)Control por subdivision	FALTA:
-	Seguimos teniendo algun problemilla en el while loop de subDivision()
+	Seguimos teniendo algun problemilla en el while loop de subDivision().
+	Agregamos la subrutin subDivision dentro del chequeo de potTime
 4)Overflow para tap tempo	FALTA:
-	2 opciones posibles-->Overflow deja el pote en 255
+	2 opciones posibles-->Overflow deja el pote en 255 (es el que tenemos actualmente)
 			   -->Overflow deja el tempo en el ultimo tappedTime
 			   -->Overflow deja el tempo en una subdivision del tempo marcado		
 					   

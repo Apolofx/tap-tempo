@@ -51,13 +51,16 @@ void loop()
 {
   if (abs(analogRead(A0) - last_read) >= 4)
   {
-    potTime(A0);
-  }
-  if (firstPress && (abs(analogRead(A0) - last_read) >= 4))
-  {
-    subDiv = subDivision();
-    firstPress = false;
-    botonPress = false;
+    if (firstPress)
+    {
+      subDiv = subDivision();
+      firstPress = false;
+      botonPress = false;
+    }
+    else
+    {
+      potTime(A0);
+    }
   }
   ledBlink(tappedTime, subDiv);
   if (botonPress && !firstPress)
