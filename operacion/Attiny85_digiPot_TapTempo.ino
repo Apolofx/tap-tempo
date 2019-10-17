@@ -115,10 +115,10 @@ void ledBlink(float time, float div)
   }
 }
 
-// potTime() usa el ADC para leer el potenciometro y lo mapea en un rango de
-// 50 a 600 milisegundos para guardar el valor en tappedTime y ser usado tanto
-// para la rutina del Led como para la conversion del tiempo a pot_resist del DigiPot
 void potTime(byte x)
+"""potTime() usa el ADC para leer el potenciometro y lo mapea en un rango de
+  50 a 600 milisegundos para guardar el valor en tappedTime y ser usado tanto
+  para la rutina del Led como para la conversion del tiempo a pot_resist del DigiPot"""
 {
   tempo = map(analogRead(x), 455, 1023, 50, 600);
   tappedTime = tempo;
