@@ -1,5 +1,6 @@
 Rutinas de calibracion y de operacion para controlar el tempo del chip
 de delay PT2399 mediante potenciometro digital.
+
 **Calibracion:**
 Tanto los PT2399 como los MCP41100 traen una dispersion de fabrica. 
 En especial los MCP41100 he medido discrepancias de hasta un 30% con respecto
