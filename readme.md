@@ -2,24 +2,24 @@ Rutinas de calibracion y de operacion para controlar el tempo del chip
 de delay PT2399 mediante potenciometro digital.
 
 **Calibracion:**
-Tanto los PT2399 como los MCP41100 traen una dispersion de fabrica. 
-En especial los MCP41100 he medido discrepancias de hasta un 30% con respecto
+Tanto los PT2399 como los MCP41100 vienen de fabrica con mucha dispersion entre unidades. 
+En especial los MCP41100, donde  he medido discrepancias de hasta un 30% con respecto
 al valor declarado por el fabricante.
 Por lo tanto es indispensable hacer un emparejamiento entre PT2399 y MCP41100.
 Para esto vamosa necesitar el siguiente Hardware:
 - Arduino cargado con el firmware de calibracion
 - MCP41100 conectado a Arduino segun datasheet. Revisar que la libreria SPI.h 
 funcione con este potenciometro. Sino, usar software SPI con ShiftOut, al igual
-que como lo hicimos en la rutina de operacion en el Attiny
+que como lo hicimos en la rutina de operacion en el Attiny85
 MOSI-DI SCL-CLK SS-CS. Los wipers del MCP van a ir conectados exactamente
-igual a como se conectaria el potenciometro de carbon al PT2399.
+igual a como se conectaria el potenciometro rotativo  al PT2399.
 - Arduino pin de señal conectado a Input del pedal.
  (Importante que en la calibracion, tanto el arduino como el pedal compartan la referencia 
-a GND.  
-- La salida del pedal se va a conectar al puerto ADC del arduino, estando este
+a GND.)  
+- La salida del pedal se va a conectar al puerto A0 ADC del arduino, estando este
 conectado mediante una Pulldown de 1-10k a GND, a la espera de la señal 
 retrasada.
-- Ponemos el potenciometro de MIX al maximo para tener el maximo volumen de repeticiones.
+- Ponemos el potenciometro de MIX al maximo para tener el maximo nivel de repeticiones.
 - Una vez que esta todo conectado, deberiamos alimentar el pedal a su alimentacion
 de 9V.
 - Abrir el Serial Monitor en el IDE, y reinciar arduino para que comience la rutina. 
