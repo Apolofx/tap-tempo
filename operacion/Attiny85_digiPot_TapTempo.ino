@@ -41,7 +41,7 @@ void setup()
   // PORTB |= (1 << botonPin); // input pull-ups desactivadas mientras tengasmos la external pullup
   ADCSRA |= (1 << 7);
   last_read = analogRead(A0);
-  tappedTime = last_read;
+  tappedTime = map(last_read, 455, 1023, 50, 600);
   digiPotWrite(tappedByte());
 }
 /************************************
@@ -53,6 +53,7 @@ void loop()
   {
     if (firstPress)
     {
+      ledflash(3);
       subDiv = subDivision();
       firstPress = false;
       botonPress = false;
@@ -116,9 +117,9 @@ void ledBlink(float time, float div)
 }
 
 void potTime(byte x)
-"""potTime() usa el ADC para leer el potenciometro y lo mapea en un rango de
+/*potTime() usa el ADC para leer el potenciometro y lo mapea en un rango de
   50 a 600 milisegundos para guardar el valor en tappedTime y ser usado tanto
-  para la rutina del Led como para la conversion del tiempo a pot_resist del DigiPot"""
+  para la rutina del Led como para la conversion del tiempo a pot_resist del DigiPot*/
 {
   tempo = map(analogRead(x), 455, 1023, 50, 600);
   tappedTime = tempo;
@@ -145,7 +146,6 @@ float subDivision()
 {
   MCUCR &= ~(1 << ISC01); // Int en flanco descendente
   GIMSK &= ~(1 << INT0); // int externa
-  ledflash(3);
   while (digitalRead(botonPin) == HIGH)
   {
     int read = analogRead(A0);
@@ -174,8 +174,7 @@ float subDivision()
         subDiv = 0.25; // 'tresillo de corchea'
       }
   }
-  int actualTime = millis();
-  while((millis() - actualTime) < 50){} 
+  delay(50);
   potRes = (a * pow((tappedTime * subDiv), 2.0) + b * (tappedTime * subDiv) + c);
   potRes_int = round(potRes);
   if (potRes_int > 255)
@@ -194,9 +193,9 @@ void ledflash(int n)
   for (int i = 0; i < n; i++)
   {
     PORTB^= (1 << ledPin);
-    delay(100);
+    delay(50);
     PORTB^= (1 << ledPin);
-    delay(80);
+    delay(30);
   }
 }
 
@@ -207,7 +206,7 @@ byte tappedByte(){
   {
     potRes_int = 255;
   }
-  return potRes;
+  return potRes_int;
 }
 
 
