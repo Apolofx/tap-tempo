@@ -15,7 +15,7 @@ long int sndTime;
 long int rtnTime;
 long int val;
 long int duracion;
-int delay_vector[129];
+int delay_vector[256];
 boolean calibracion = true;
 
 void setup(){
@@ -36,7 +36,7 @@ void setup(){
 void loop() {
   while(calibracion){
     
-    for (int i = 0; i <= 128; i++){
+    for (int i = 0; i <= 255; i++){
     
       digitalPotWrite(i);
       digitalWrite(sndPin, 1);                      //envio pulso (5v rising)
@@ -73,7 +73,7 @@ void loop() {
         }
 calibracion = false;
 
-for (int j = 0; j <= 128; j++){
+for (int j = 0; j <= 255; j++){
   Serial.print(delay_vector[j]);
   Serial.print(", ");
       }
