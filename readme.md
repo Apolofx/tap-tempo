@@ -44,6 +44,7 @@ Si se movio, entonces traducimos la lectura ADC a un intervalo de tiempo, e ingr
 el tiempo determinado por el ADC al polinomio de ajuste, podemos transformar un valor
 de tiempo en milisegundos a al byte que va a llevar el databyte en la comunicacion
 con el potenciometro digital. 
+
 *Aclaracion con respecto a la comunicacion con el MCP41100:
 El Attiny no tiene harware SPI, usamos la USI mediante software SPI, utilizando 
 la funcion ShiftOut, que se sincroniza con el CLK de ambos dispositivos para
@@ -54,6 +55,7 @@ para nuestra aplicacion corresponde a 0b00010001.
 El databyte, como ya explicamos, es la transformacion del tiempo a al dominio
 de los steps del pote digital. Es decir, de un float de 50.0 a 600.0 ms, a un int
 de 0 a 255.*
+
 Por ultimo tenemos la rutina de subDivisiones. Esta se activa cuando se detecto que
 movimos el potenciometro del ADC, PERO ademas de eso se encontraba previamente 
 levantada la firstPress flag. Es decir, que para ingresar a esta rutina, apretamos
