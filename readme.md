@@ -20,7 +20,7 @@ a GND.)
 conectado mediante una Pulldown de 1-10k a GND, a la espera de la señal 
 retrasada.
 - Ponemos el potenciometro de MIX al maximo para tener el maximo nivel de repeticiones.
-- Una vez que esta todo conectado, deberiamos alimentar el pedal a su alimentacion
+- Una vez que esta todo conectado, deberiamos conectar el pedal a su alimentacion
 de 9V.
 - Abrir el Serial Monitor en el IDE, y reinciar arduino para que comience la rutina. 
 - Finalizada la rutina, copiamos el array a excel. Como variable independiente
