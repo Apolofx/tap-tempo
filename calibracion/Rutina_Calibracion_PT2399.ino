@@ -1,3 +1,5 @@
+#include <spline.h>
+
 /*
                         +-\/-+
   Ardu 10-------->CS   1|    |8  Vcc
@@ -6,16 +8,18 @@
                   GND  4|    |5  Pot1 
                         +----+
 */
-#include <SPI.h>
+//#include <SPI.h>
 byte address = 0x00;
 int CS= 10;
+int dataPin = 11;
+int clockPin = 13;
 int sndPin = 7;
 int rtnPin = A0;
 long int sndTime;
 long int rtnTime;
 long int val;
 long int duracion;
-int delay_vector[256];
+double delay_vector[256];
 boolean calibracion = true;
 
 void setup(){
@@ -23,7 +27,8 @@ void setup(){
   pinMode(sndPin, OUTPUT);
   pinMode(rtnPin, INPUT);
   pinMode (CS, OUTPUT);
-  SPI.begin();
+  pinMode(clockPin, OUTPUT);
+  pinMode(dataPin, OUTPUT);
   Serial.print("Comenzando rutina de calibracion en: ");
   Serial.print("3..");
   delay(1000);
@@ -77,8 +82,7 @@ for (int j = 0; j <= 255; j++){
   Serial.print(delay_vector[j]);
   Serial.print(", ");
       }
-   }
-   
+   }   
 }
 
 
@@ -86,7 +90,7 @@ for (int j = 0; j <= 255; j++){
 int digitalPotWrite(int value)
 {
 digitalWrite(CS, LOW);
-SPI.transfer(address);
-SPI.transfer(value);
+shiftOut(dataPin, clockPin, MSBFIRST, 0b00010001);
+shiftOut(dataPin, clockPin, MSBFIRST, value);
 digitalWrite(CS, HIGH);
 }

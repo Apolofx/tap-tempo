@@ -156,22 +156,22 @@ float subDivision()
     else
       if (604 < read && read <= 708)
       {
-        subDiv = 0.75; // 'corchea';
+        subDiv = 0.75; // 'corchea con puntillo';
       }
     else
       if (708 < read && read <= 812)
       {
-        subDiv = 0.5; // 'semicorchea';
+        subDiv = 0.5; // 'corchea';
       }
     else
       if (812 < read && read <= 916)
       {
-        subDiv = 0.33; // 'corchea con puntillo';
+        subDiv = 0.33; // 'tresillo de corchea';
       }
     else
       if (916 < read && read <= 1023)
       {
-        subDiv = 0.25; // 'tresillo de corchea'
+        subDiv = 0.25; // 'semicorchea'
       }
   }
   delay(50);
