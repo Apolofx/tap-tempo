@@ -46,9 +46,10 @@ el tiempo determinado por el ADC al polinomio de ajuste, podemos transformar un 
 de tiempo en milisegundos a al byte que va a llevar el databyte en la comunicacion
 con el potenciometro digital. 
 
+
 *Aclaracion con respecto a la comunicacion con el MCP41100:
 El Attiny no tiene harware SPI, usamos la USI mediante software SPI, utilizando 
-la funcion ShiftOut, que se sincroniza con el CLK de ambos dispositivos para
+la funcion ShiftOut, que se sincroniza con el CLK ambos dispositivos para
 enviar 2 bytes. El primer byte es el que se detalla en el datasheet del MCP41100
 como el command byte. Este indica en que modo vamos a estar usandolo, y la direccion
 de memoria que tiene asignado el potenciometro. En nuestro caso, el command byte
@@ -65,5 +66,8 @@ el led parpadea rapidamente 3 veces, ya ingresamos en el modo de seleccion de su
 para salir de dicho modo, solo volvemos a apretar el switch, y vamos a ver reflejado en el
 parpadeo del LED, el nuevo tempo asignado por subDiv. 
 ****************************************************************************************
-FALTA DESCRIBIR EL COMPORTAMIENTO POR TIME OVERFLOW
+COMPORTAMIENTO POR TIME OVERFLOW
+Cuando nos pasamos de 600 ms pero no llegamos a los 1000 ms, el overflow se activa y configura el pote en el maximo tempo (utilizable sin distorsion), de 600 ms aprox. 
+Por otro lado si llegamos al overflow pero nos pasamos de 1000 ms, entramos al modo Robot.
+
 ****************************************************************************************

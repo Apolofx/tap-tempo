@@ -1,5 +1,3 @@
-#include <spline.h>
-
 /*
                         +-\/-+
   Ardu 10-------->CS   1|    |8  Vcc
@@ -8,7 +6,6 @@
                   GND  4|    |5  Pot1 
                         +----+
 */
-//#include <SPI.h>
 byte address = 0x00;
 int CS= 10;
 int dataPin = 11;

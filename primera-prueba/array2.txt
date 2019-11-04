@@ -1,0 +1,1025 @@
+Comenzando rutina de calibracion en: 3..2..1..Paso Nº: 0
+El retardo es de 57 ms
+
+
+Paso Nº: 1
+El retardo es de 61 ms
+
+
+Paso Nº: 2
+El retardo es de 67 ms
+
+
+Paso Nº: 3
+El retardo es de 72 ms
+
+
+Paso Nº: 4
+El retardo es de 77 ms
+
+
+Paso Nº: 5
+El retardo es de 81 ms
+
+
+Paso Nº: 6
+El retardo es de 86 ms
+
+
+Paso N��: 7
+El retardo es de 91 ms
+
+
+Paso Nº: 8
+El retardo es de 95 ms
+
+
+Paso N��: 9
+El retardo es de 101 ms
+
+
+Paso Nº: 10
+El retardo es de 104 ms
+
+
+Paso Nº: 11
+El retardo es de 109 ms
+
+
+Paso Nº: 12
+El retardo es de 115 ms
+
+
+Paso Nº: 13
+El retardo es de 119 ms
+
+
+Paso N��: 14
+El retardo es de 124 ms
+
+
+Paso Nº: 15
+El retardo es de 128 ms
+
+
+Paso N��: 16
+El retardo es de 132 ms
+
+
+Paso Nº: 17
+El retardo es de 137 ms
+
+
+Paso N��: 18
+El retardo es de 141 ms
+
+
+Paso Nº: 19
+El retardo es de 146 ms
+
+
+Paso Nº: 20
+El retardo es de 151 ms
+
+
+Paso Nº: 21
+El retardo es de 155 ms
+
+
+Paso Nº: 22
+El retardo es de 160 ms
+
+
+Paso Nº: 23
+El retardo es de 164 ms
+
+
+Paso N��: 24
+El retardo es de 169 ms
+
+
+Paso Nº: 25
+El retardo es de 173 ms
+
+
+Paso N��: 26
+El retardo es de 179 ms
+
+
+Paso Nº: 27
+El retardo es de 183 ms
+
+
+Paso Nº: 28
+El retardo es de 188 ms
+
+
+Paso Nº: 29
+El retardo es de 192 ms
+
+
+Paso N��: 30
+El retardo es de 195 ms
+
+
+Paso Nº: 31
+El retardo es de 201 ms
+
+
+Paso N��: 32
+El retardo es de 204 ms
+
+
+Paso N��: 33
+El retardo es de 209 ms
+
+
+Paso N��: 34
+El retardo es de 213 ms
+
+
+Paso Nº: 35
+El retardo es de 217 ms
+
+
+Paso Nº: 36
+El retardo es de 222 ms
+
+
+Paso Nº: 37
+El retardo es de 226 ms
+
+
+Paso Nº: 38
+El retardo es de 231 ms
+
+
+Paso Nº: 39
+El retardo es de 236 ms
+
+
+Paso Nº: 40
+El retardo es de 240 ms
+
+
+Paso Nº: 41
+El retardo es de 243 ms
+
+
+Paso N��: 42
+El retardo es de 248 ms
+
+
+Paso Nº: 43
+El retardo es de 253 ms
+
+
+Paso Nº: 44
+El retardo es de 258 ms
+
+
+Paso Nº: 45
+El retardo es de 262 ms
+
+
+Paso Nº: 46
+El retardo es de 266 ms
+
+
+Paso Nº: 47
+El retardo es de 270 ms
+
+
+Paso Nº: 48
+El retardo es de 275 ms
+
+
+Paso Nº: 49
+El retardo es de 279 ms
+
+
+Paso N��: 50
+El retardo es de 282 ms
+
+
+Paso Nº: 51
+El retardo es de 288 ms
+
+
+Paso Nº: 52
+El retardo es de 292 ms
+
+
+Paso Nº: 53
+El retardo es de 296 ms
+
+
+Paso Nº: 54
+El retardo es de 300 ms
+
+
+Paso Nº: 55
+El retardo es de 304 ms
+
+
+Paso Nº: 56
+El retardo es de 309 ms
+
+
+Paso Nº: 57
+El retardo es de 314 ms
+
+
+Paso Nº: 58
+El retardo es de 318 ms
+
+
+Paso Nº: 59
+El retardo es de 323 ms
+
+
+Paso N��: 60
+El retardo es de 326 ms
+
+
+Paso Nº: 61
+El retardo es de 331 ms
+
+
+Paso Nº: 62
+El retardo es de 335 ms
+
+
+Paso Nº: 63
+El retardo es de 339 ms
+
+
+Paso Nº: 64
+El retardo es de 343 ms
+
+
+Paso Nº: 65
+El retardo es de 347 ms
+
+
+Paso Nº: 66
+El retardo es de 351 ms
+
+
+Paso N��: 67
+El retardo es de 355 ms
+
+
+Paso N��: 68
+El retardo es de 360 ms
+
+
+Paso Nº: 69
+El retardo es de 365 ms
+
+
+Paso Nº: 70
+El retardo es de 369 ms
+
+
+Paso Nº: 71
+El retardo es de 374 ms
+
+
+Paso Nº: 72
+El retardo es de 378 ms
+
+
+Paso N��: 73
+El retardo es de 382 ms
+
+
+Paso Nº: 74
+El retardo es de 386 ms
+
+
+Paso Nº: 75
+El retardo es de 390 ms
+
+
+Paso N��: 76
+El retardo es de 395 ms
+
+
+Paso Nº: 77
+El retardo es de 399 ms
+
+
+Paso N��: 78
+El retardo es de 403 ms
+
+
+Paso Nº: 79
+El retardo es de 408 ms
+
+
+Paso Nº: 80
+El retardo es de 412 ms
+
+
+Paso Nº: 81
+El retardo es de 414 ms
+
+
+Paso Nº: 82
+El retardo es de 420 ms
+
+
+Paso Nº: 83
+El retardo es de 424 ms
+
+
+Paso Nº: 84
+El retardo es de 428 ms
+
+
+Paso Nº: 85
+El retardo es de 432 ms
+
+
+Paso N��: 86
+El retardo es de 437 ms
+
+
+Paso Nº: 87
+El retardo es de 440 ms
+
+
+Paso Nº: 88
+El retardo es de 446 ms
+
+
+Paso N��: 89
+El retardo es de 450 ms
+
+
+Paso Nº: 90
+El retardo es de 454 ms
+
+
+Paso Nº: 91
+El retardo es de 458 ms
+
+
+Paso Nº: 92
+El retardo es de 463 ms
+
+
+Paso Nº: 93
+El retardo es de 466 ms
+
+
+Paso Nº: 94
+El retardo es de 471 ms
+
+
+Paso Nº: 95
+El retardo es de 475 ms
+
+
+Paso N��: 96
+El retardo es de 478 ms
+
+
+Paso N��: 97
+El retardo es de 482 ms
+
+
+Paso Nº: 98
+El retardo es de 488 ms
+
+
+Paso Nº: 99
+El retardo es de 492 ms
+
+
+Paso Nº: 100
+El retardo es de 495 ms
+
+
+Paso Nº: 101
+El retardo es de 500 ms
+
+
+Paso Nº: 102
+El retardo es de 504 ms
+
+
+Paso Nº: 103
+El retardo es de 508 ms
+
+
+Paso Nº: 104
+El retardo es de 513 ms
+
+
+Paso Nº: 105
+El retardo es de 516 ms
+
+
+Paso N��: 106
+El retardo es de 520 ms
+
+
+Paso N��: 107
+El retardo es de 525 ms
+
+
+Paso Nº: 108
+El retardo es de 530 ms
+
+
+Paso Nº: 109
+El retardo es de 534 ms
+
+
+Paso Nº: 110
+El retardo es de 537 ms
+
+
+Paso N��: 111
+El retardo es de 542 ms
+
+
+Paso N��: 112
+El retardo es de 546 ms
+
+
+Paso Nº: 113
+El retardo es de 549 ms
+
+
+Paso Nº: 114
+El retardo es de 553 ms
+
+
+Paso Nº: 115
+El retardo es de 557 ms
+
+
+Paso Nº: 116
+El retardo es de 562 ms
+
+
+Paso N��: 117
+El retardo es de 566 ms
+
+
+Paso Nº: 118
+El retardo es de 570 ms
+
+
+Paso Nº: 119
+El retardo es de 574 ms
+
+
+Paso Nº: 120
+El retardo es de 580 ms
+
+
+Paso N��: 121
+El retardo es de 583 ms
+
+
+Paso Nº: 122
+El retardo es de 588 ms
+
+
+Paso Nº: 123
+El retardo es de 592 ms
+
+
+Paso N��: 124
+El retardo es de 596 ms
+
+
+Paso Nº: 125
+El retardo es de 600 ms
+
+
+Paso Nº: 126
+El retardo es de 605 ms
+
+
+Paso Nº: 127
+El retardo es de 609 ms
+
+
+Paso Nº: 128
+El retardo es de 612 ms
+
+
+Paso Nº: 129
+El retardo es de 617 ms
+
+
+Paso Nº: 130
+El retardo es de 621 ms
+
+
+Paso Nº: 131
+El retardo es de 623 ms
+
+
+Paso Nº: 132
+El retardo es de 629 ms
+
+
+Paso Nº: 133
+El retardo es de 632 ms
+
+
+Paso Nº: 134
+El retardo es de 637 ms
+
+
+Paso N��: 135
+El retardo es de 641 ms
+
+
+Paso Nº: 136
+El retardo es de 645 ms
+
+
+Paso Nº: 137
+El retardo es de 650 ms
+
+
+Paso Nº: 138
+El retardo es de 654 ms
+
+
+Paso Nº: 139
+El retardo es de 658 ms
+
+
+Paso Nº: 140
+El retardo es de 662 ms
+
+
+Paso Nº: 141
+El retardo es de 665 ms
+
+
+Paso Nº: 142
+El retardo es de 671 ms
+
+
+Paso Nº: 143
+El retardo es de 673 ms
+
+
+Paso Nº: 144
+El retardo es de 678 ms
+
+
+Paso Nº: 145
+El retardo es de 682 ms
+
+
+Paso N��: 146
+El retardo es de 687 ms
+
+
+Paso Nº: 147
+El retardo es de 690 ms
+
+
+Paso Nº: 148
+El retardo es de 694 ms
+
+
+Paso Nº: 149
+El retardo es de 699 ms
+
+
+Paso Nº: 150
+El retardo es de 704 ms
+
+
+Paso N��: 151
+El retardo es de 707 ms
+
+
+Paso Nº: 152
+El retardo es de 711 ms
+
+
+Paso N��: 153
+El retardo es de 715 ms
+
+
+Paso Nº: 154
+El retardo es de 720 ms
+
+
+Paso N��: 155
+El retardo es de 723 ms
+
+
+Paso Nº: 156
+El retardo es de 728 ms
+
+
+Paso N��: 157
+El retardo es de 732 ms
+
+
+Paso Nº: 158
+El retardo es de 735 ms
+
+
+Paso Nº: 159
+El retardo es de 739 ms
+
+
+Paso Nº: 160
+El retardo es de 743 ms
+
+
+Paso N��: 161
+El retardo es de 747 ms
+
+
+Paso Nº: 162
+El retardo es de 752 ms
+
+
+Paso N��: 163
+El retardo es de 757 ms
+
+
+Paso Nº: 164
+El retardo es de 760 ms
+
+
+Paso Nº: 165
+El retardo es de 764 ms
+
+
+Paso Nº: 166
+El retardo es de 768 ms
+
+
+Paso Nº: 167
+El retardo es de 772 ms
+
+
+Paso N��: 168
+El retardo es de 776 ms
+
+
+Paso Nº: 169
+El retardo es de 781 ms
+
+
+Paso N��: 170
+El retardo es de 784 ms
+
+
+Paso Nº: 171
+El retardo es de 789 ms
+
+
+Paso N��: 172
+El retardo es de 794 ms
+
+
+Paso Nº: 173
+El retardo es de 797 ms
+
+
+Paso N��: 174
+El retardo es de 801 ms
+
+
+Paso Nº: 175
+El retardo es de 806 ms
+
+
+Paso N��: 176
+El retardo es de 809 ms
+
+
+Paso Nº: 177
+El retardo es de 815 ms
+
+
+Paso Nº: 178
+El retardo es de 817 ms
+
+
+Paso N��: 179
+El retardo es de 821 ms
+
+
+Paso Nº: 180
+El retardo es de 825 ms
+
+
+Paso Nº: 181
+El retardo es de 830 ms
+
+
+Paso Nº: 182
+El retardo es de 834 ms
+
+
+Paso Nº: 183
+El retardo es de 837 ms
+
+
+Paso N��: 184
+El retardo es de 842 ms
+
+
+Paso Nº: 185
+El retardo es de 845 ms
+
+
+Paso Nº: 186
+El retardo es de 850 ms
+
+
+Paso Nº: 187
+El retardo es de 855 ms
+
+
+Paso Nº: 188
+El retardo es de 858 ms
+
+
+Paso Nº: 189
+El retardo es de 864 ms
+
+
+Paso Nº: 190
+El retardo es de 867 ms
+
+
+Paso N��: 191
+El retardo es de 872 ms
+
+
+Paso Nº: 192
+El retardo es de 875 ms
+
+
+Paso Nº: 193
+El retardo es de 878 ms
+
+
+Paso N��: 194
+El retardo es de 883 ms
+
+
+Paso Nº: 195
+El retardo es de 887 ms
+
+
+Paso Nº: 196
+El retardo es de 891 ms
+
+
+Paso Nº: 197
+El retardo es de 895 ms
+
+
+Paso N��: 198
+El retardo es de 899 ms
+
+
+Paso Nº: 199
+El retardo es de 903 ms
+
+
+Paso Nº: 200
+El retardo es de 907 ms
+
+
+Paso N��: 201
+El retardo es de 911 ms
+
+
+Paso Nº: 202
+El retardo es de 916 ms
+
+
+Paso Nº: 203
+El retardo es de 920 ms
+
+
+Paso N��: 204
+El retardo es de 923 ms
+
+
+Paso Nº: 205
+El retardo es de 928 ms
+
+
+Paso Nº: 206
+El retardo es de 932 ms
+
+
+Paso Nº: 207
+El retardo es de 936 ms
+
+
+Paso N��: 208
+El retardo es de 940 ms
+
+
+Paso Nº: 209
+El retardo es de 944 ms
+
+
+Paso Nº: 210
+El retardo es de 947 ms
+
+
+Paso Nº: 211
+El retardo es de 953 ms
+
+
+Paso Nº: 212
+El retardo es de 956 ms
+
+
+Paso Nº: 213
+El retardo es de 961 ms
+
+
+Paso N��: 214
+El retardo es de 963 ms
+
+
+Paso N��: 215
+El retardo es de 968 ms
+
+
+Paso Nº: 216
+El retardo es de 973 ms
+
+
+Paso Nº: 217
+El retardo es de 976 ms
+
+
+Paso Nº: 218
+El retardo es de 981 ms
+
+
+Paso Nº: 219
+El retardo es de 985 ms
+
+
+Paso Nº: 220
+El retardo es de 988 ms
+
+
+Paso N��: 221
+El retardo es de 993 ms
+
+
+Paso N��: 222
+El retardo es de 996 ms
+
+
+Paso Nº: 223
+El retardo es de 1000 ms
+
+
+Paso Nº: 224
+El retardo es de 1005 ms
+
+
+Paso Nº: 225
+El retardo es de 1009 ms
+
+
+Paso Nº: 226
+El retardo es de 1013 ms
+
+
+Paso Nº: 227
+El retardo es de 1017 ms
+
+
+Paso Nº: 228
+El retardo es de 1021 ms
+
+
+Paso Nº: 229
+El retardo es de 1025 ms
+
+
+Paso N��: 230
+El retardo es de 1028 ms
+
+
+Paso N��: 231
+El retardo es de 1033 ms
+
+
+Paso N��: 232
+El retardo es de 1037 ms
+
+
+Paso N��: 233
+El retardo es de 1041 ms
+
+
+Paso N��: 234
+El retardo es de 1046 ms
+
+
+Paso Nº: 235
+El retardo es de 1050 ms
+
+
+Paso Nº: 236
+El retardo es de 1053 ms
+
+
+Paso Nº: 237
+El retardo es de 1058 ms
+
+
+Paso Nº: 238
+El retardo es de 1062 ms
+
+
+Paso Nº: 239
+El retardo es de 1066 ms
+
+
+Paso Nº: 240
+El retardo es de 1069 ms
+
+
+Paso N��: 241
+El retardo es de 1073 ms
+
+
+Paso Nº: 242
+El retardo es de 1077 ms
+
+
+Paso Nº: 243
+El retardo es de 1081 ms
+
+
+Paso Nº: 244
+El retardo es de 1085 ms
+
+
+Paso N��: 245
+El retardo es de 1089 ms
+
+
+Paso Nº: 246
+El retardo es de 1094 ms
+
+
+Paso Nº: 247
+El retardo es de 1097 ms
+
+
+Paso N��: 248
+El retardo es de 1102 ms
+
+
+Paso Nº: 249
+El retardo es de 1106 ms
+
+
+Paso Nº: 250
+El retardo es de 1110 ms
+
+
+Paso Nº: 251
+El retardo es de 1114 ms
+
+
+Paso Nº: 252
+El retardo es de 1118 ms
+
+
+Paso Nº: 253
+El retardo es de 1122 ms
+
+
+Paso N��: 254
+El retardo es de 1126 ms
+
+
+Paso Nº: 255
+El retardo es de 1130 ms
+
+
+57, 61, 67, 72, 77, 81, 86, 91, 95, 101, 104, 109, 115, 119, 124, 128, 132, 137, 141, 146, 151, 155, 160, 164, 169, 173, 179, 183, 188, 192, 195, 201, 204, 209, 213, 217, 222, 226, 231, 236, 240, 243, 248, 253, 258, 262, 266, 270, 275, 279, 282, 288, 292, 296, 300, 304, 309, 314, 318, 323, 326, 331, 335, 339, 343, 347, 351, 355, 360, 365, 369, 374, 378, 382, 386, 390, 395, 399, 403, 408, 412, 414, 420, 424, 428, 432, 437, 440, 446, 450, 454, 458, 463, 466, 471, 475, 478, 482, 488, 492, 495, 500, 504, 508, 513, 516, 520, 525, 530, 534, 537, 542, 546, 549, 553, 557, 562, 566, 570, 574, 580, 583, 588, 592, 596, 600, 605, 609, 612, 617, 621, 623, 629, 632, 637, 641, 645, 650, 654, 658, 662, 665, 671, 673, 678, 682, 687, 690, 694, 699, 704, 707, 711, 715, 720, 723, 728, 732, 735, 739, 743, 747, 752, 757, 760, 764, 768, 772, 776, 781, 784, 789, 794, 797, 801, 806, 809, 815, 817, 821, 825, 830, 834, 837, 842, 845, 850, 855, 858, 864, 867, 872, 875, 878, 883, 887, 891, 895, 899, 903, 907, 911, 916, 920, 923, 928, 932, 936, 940, 944, 947, 953, 956, 961, 963, 968, 973, 976, 981, 985, 988, 993, 996, 1000, 1005, 1009, 1013, 1017, 1021, 1025, 1028, 1033, 1037, 1041, 1046, 1050, 1053, 1058, 1062, 1066, 1069, 1073, 1077, 1081, 1085, 1089, 1094, 1097, 1102, 1106, 1110, 1114, 1118, 1122, 1126, 1130, 

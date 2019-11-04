@@ -24,7 +24,7 @@ DECLARACION/INICIALIZACION DE VARIABLES
 ****************************************/
 byte tempo_Pot = 5, CS = 1, dataPin = 3, clockPin = 0, ledPin = 4, botonPin = 2;
 int ledState = LOW, tempo, last_read, potRes_int;
-float potRes, tappedTime, subDiv = 1.0, a = 0.0029, b = 0.7342, c = -45.2154;
+float potRes, tappedTime, subDiv = 1.0, a = 1.2813108742542093e-05, b = 0.22416, c = -14.12274;
 unsigned long startCount, finishCount, previousMillis = 0;
 boolean firstPress = false, secondPress = false, boot = true;
 volatile boolean botonPress = false;
@@ -41,7 +41,7 @@ void setup()
   // PORTB |= (1 << botonPin); // input pull-ups desactivadas mientras tengasmos la external pullup
   ADCSRA |= (1 << 7);
   last_read = analogRead(A0);
-  tappedTime = map(last_read, 455, 1023, 50, 600);
+  tappedTime = map(last_read, 450, 1023, 57, 600);
   digiPotWrite(tappedByte());
 }
 /************************************
@@ -75,18 +75,45 @@ void loop()
   {
     finishCount = millis();
     tappedTime = finishCount - startCount;
-    subDiv = 1.0;
-    potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
-    potRes_int = round(potRes);
-    if (potRes_int > 255)
-    {
-      potRes_int = 255;
+      //MODO ROBOT
+    if (tappedTime > 1000)
+    { 
+      ledflash(3);
+      int speed;
+      MCUCR &= ~(1 << ISC01); // Int en flanco descendente
+      GIMSK &= ~(1 << INT0); // int externa
+      delay(50);
+      while (digitalRead(botonPin) == HIGH)
+      { 
+        speed = map(analogRead(A0), 450, 1023, 1, 1000);
+        digiPotWrite(random(0, 130));
+        delay(speed);
+      }
+      
+      firstPress = true;
+      startCount = millis(); // empieza el contador
+      firstPress = true; // Flag de 1er pulsacion
+      botonPress = false; // bajamos la Flag de boton presionado
+      MCUCR |= (1 << ISC01); // Int en flanco descendente
+      GIMSK |= (1 << INT0); // int externa    
     }
-    digiPotWrite(potRes_int);
-    firstPress = false;
-    botonPress = false;
+
+    else
+    {
+      subDiv = 1.0;
+      potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
+      potRes_int = round(potRes);
+      if (potRes_int > 128 && potRes_int < 255)
+      {
+        potRes_int = 128;
+      }
+      digiPotWrite(potRes_int);
+      firstPress = false;
+      botonPress = false;
+    }
   }
 }
+
 
 /***********************
         FUNCIONES
@@ -121,15 +148,21 @@ void potTime(byte x)
   50 a 600 milisegundos para guardar el valor en tappedTime y ser usado tanto
   para la rutina del Led como para la conversion del tiempo a pot_resist del DigiPot*/
 {
-  tempo = map(analogRead(x), 455, 1023, 50, 600);
+  tempo = map(analogRead(x), 450, 1023, 57, 600);
   tappedTime = tempo;
   subDiv = 1;
   potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
   potRes_int = round(potRes);
+  //Overflow:
   if (potRes_int > 255)
   {
-    potRes_int = 255;
+    potRes_int = 128;
   }
+  else if (potRes_int < 0)
+  {
+    potRes_int = 0;
+  }
+
   digiPotWrite(potRes_int);
   last_read = analogRead(x);
 }
@@ -149,22 +182,22 @@ float subDivision()
   while (digitalRead(botonPin) == HIGH)
   {
     int read = analogRead(A0);
-    if (read <= 604)
+    if (read <= 597)
     {
       subDiv = 1.0; // 'negra'
     }
     else
-      if (604 < read && read <= 708)
+      if (597 < read && read <= 703)
       {
         subDiv = 0.75; // 'corchea con puntillo';
       }
     else
-      if (708 < read && read <= 812)
+      if (703 < read && read <= 809)
       {
         subDiv = 0.5; // 'corchea';
       }
     else
-      if (812 < read && read <= 916)
+      if (809 < read && read <= 916)
       {
         subDiv = 0.33; // 'tresillo de corchea';
       }
