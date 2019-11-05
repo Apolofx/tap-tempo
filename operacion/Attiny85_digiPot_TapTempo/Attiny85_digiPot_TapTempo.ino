@@ -74,14 +74,27 @@ void loop()
   if (firstPress && botonPress)
   {
     finishCount = millis();
-    tappedTime = finishCount - startCount;
+    firstPress = false;
+    botonPress = false;
+    if ((finishCount - startCount) < 1000)
+    {
+      tappedTime = finishCount - startCount;
+      subDiv = 1.0;
+      potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
+      potRes_int = round(potRes);
+      if (potRes_int > 128)
+      {
+        potRes_int = 128;
+      }
+      digiPotWrite(potRes_int);
+    }
       //MODO ROBOT
-    if (tappedTime > 1000)
+    else
     { 
       ledflash(3);
       int speed;
-      MCUCR &= ~(1 << ISC01); // Int en flanco descendente
-      GIMSK &= ~(1 << INT0); // int externa
+      MCUCR &= ~(1 << ISC01); //Desactivamos interrupciones
+      GIMSK &= ~(1 << INT0); 
       delay(50);
       while (digitalRead(botonPin) == HIGH)
       { 
@@ -89,27 +102,9 @@ void loop()
         digiPotWrite(random(0, 130));
         delay(speed);
       }
-      
-      firstPress = true;
-      startCount = millis(); // empieza el contador
-      firstPress = true; // Flag de 1er pulsacion
-      botonPress = false; // bajamos la Flag de boton presionado
-      MCUCR |= (1 << ISC01); // Int en flanco descendente
-      GIMSK |= (1 << INT0); // int externa    
-    }
-
-    else
-    {
-      subDiv = 1.0;
-      potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
-      potRes_int = round(potRes);
-      if (potRes_int > 128 && potRes_int < 255)
-      {
-        potRes_int = 128;
-      }
-      digiPotWrite(potRes_int);
-      firstPress = false;
-      botonPress = false;
+      digiPotWrite(tappedTime);
+      MCUCR |= (1 << ISC01); // activamos interrupciones
+      GIMSK |= (1 << INT0); 
     }
   }
 }
