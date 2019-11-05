@@ -68,6 +68,6 @@ parpadeo del LED, el nuevo tempo asignado por subDiv.
 ****************************************************************************************
 COMPORTAMIENTO POR TIME OVERFLOW
 Cuando nos pasamos de 600 ms pero no llegamos a los 1000 ms, el overflow se activa y configura el pote en el maximo tempo (utilizable sin distorsion), de 600 ms aprox. 
-Por otro lado si llegamos al overflow pero nos pasamos de 1000 ms, entramos al modo Robot.
-
+Por otro lado si llegamos al overflow pero nos pasamos de 1000 ms, entramos al modo Robot. 
+Para salir del modo Robot, simplemente presionamos nuevamente el switch y automaticamente volvemos a tener el delay seteado en el ultimo tempo marcado antes de haber entrado a la rutina robot. 
 ****************************************************************************************
