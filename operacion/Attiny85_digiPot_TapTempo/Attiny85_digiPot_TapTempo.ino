@@ -78,14 +78,17 @@ void loop()
     botonPress = false;
     if ((finishCount - startCount) < 1000)
     {
-      tappedTime = finishCount - startCount;
+      if ((finishCount - startCount) <= 655)
+      {
+        tappedTime = finishCount - startCount;
+      }
+      else
+      {
+        tappedTime = 655;
+      }
       subDiv = 1.0;
       potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
       potRes_int = round(potRes);
-      if (potRes_int > 128)
-      {
-        potRes_int = 128;
-      }
       digiPotWrite(potRes_int);
     }
       //MODO ROBOT
@@ -99,10 +102,11 @@ void loop()
       while (digitalRead(botonPin) == HIGH)
       { 
         speed = map(analogRead(A0), 450, 1023, 1, 1000);
-        digiPotWrite(random(0, 130));
+        digiPotWrite(int(random(0, 130)));
         delay(speed);
       }
-      digiPotWrite(tappedTime);
+      digiPotWrite(potRes_int);
+      delay(100);
       MCUCR |= (1 << ISC01); // activamos interrupciones
       GIMSK |= (1 << INT0); 
     }
