@@ -101,9 +101,16 @@ void loop()
       delay(50);
       while (digitalRead(botonPin) == HIGH)
       { 
-        speed = map(analogRead(A0), 450, 1023, 1, 1000);
-        digiPotWrite(int(random(0, 130)));
-        delay(speed);
+        //speed = map(analogRead(A0), 450, 1023, 1, 1000);
+        //digiPotWrite(int(random(0, 130)));
+        for(int i=0; i<=100; i+=25){
+          digiPotWrite(i);
+          delay(map(analogRead(A0), 450, 1023, 100, 1000));
+        }
+        for(int i=100; i>=0; i-=25){
+          digiPotWrite(i);
+          delay(map(analogRead(A0), 450, 1023, 100, 1000));
+        }
       }
       digiPotWrite(potRes_int);
       delay(100);
