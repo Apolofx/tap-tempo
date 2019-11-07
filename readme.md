@@ -2,7 +2,12 @@
 
 ## Setup y Hardware:
 Se utiliza el microcontrolador Attiny85. 
-El pin de RESET se usa como entrada analogica para ADC, por lo cual, segun el datasheet, no podemos poner ese puerto a menos de 2,2 volts porque se reinicia el microcontrolador. 
+El pin de RESET se usa como entrada analogica para ADC, por lo cual, segun el datasheet, no podemos poner ese puerto a menos de 2,2 volts porque se reinicia el microcontrolador.
+Para esto, vamos a anclar poner un divisor para tener referencia de 2,5 volts. Entonces, conectamos el potenciometro de la siguiente manera: 
+1. 2,5v
+2. Attiny85 RESET pin
+3. 5v
+De esta manera tenemos un rango de 2,5 volts para usar el ADC. Esto nos deja con 9 bits de resolucion en vez de los 10 bits con los cuales disponemos en cualquier otra entrada analogica. Pero en definitiva, para un dominio de 600 ms, 9 bits equivalen a 1.17 milisegundos de resolucion, lo cual es 4 veces mayor resolucion que nuestro cuello de botella que es el potenciometro digital (8 bits, 4 ms por step)
 Para programar el Attiny con ICSP hay que poner el potenciometro de Rate/Time al minimo ya que parece ser que al ser programado, el pin de RESET necesita ser puesto a 0 V, y la impedancia del puerto RST del programador no es lo suficientemente baja como para bajar el pin de 5V a 0. 
 
 Para cualquier rutina relacionada con el encendido o apago del LED hay que tener en cuenta que el diseño original tenia un led RGB con ANODO comun, por lo cual el puerto encargado del led esta en modo current sink, entonces se enciende si esta en estado logico '0'.
