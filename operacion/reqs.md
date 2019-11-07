@@ -17,7 +17,7 @@
 							firstpress == false*
 		Con este bloque tendria que funcionar el chequeo para second-tap overflow.
 	**Solucion:**
-		*Se uso el parametro startCount, y se agrego la funcion Overflow para chequear el estado del tiempo:
+		*Se uso el parametro startCount, y se agrego la funcion Overflow para chequear el estado del tiempo transcurrido desde el primer tap:
 			void Overflow(int timeout)
 			{
 			  if (firstPress)
