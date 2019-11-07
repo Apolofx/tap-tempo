@@ -25,7 +25,7 @@ DECLARACION/INICIALIZACION DE VARIABLES
 byte tempo_Pot = 5, CS = 1, dataPin = 3, clockPin = 0, ledPin = 4, botonPin = 2;
 int ledState = LOW, tempo, last_read, potRes_int;
 float potRes, tappedTime, subDiv = 1.0, a = 1.2813108742542093e-05, b = 0.22416, c = -14.12274;
-unsigned long startCount, finishCount, previousMillis = 0;
+unsigned long startCount, finishCount, previousMillis = 0, previousMillis_OF = 0;
 boolean firstPress = false, secondPress = false, boot = true;
 volatile boolean botonPress = false;
 /************************************
@@ -65,8 +65,8 @@ void loop()
   }
   ledBlink(tappedTime, subDiv);
   if (botonPress && !firstPress)
+  // Detecta si se presiono el boton por 1ra vez
   {
-    // Detecta si se presiono el boton por 1ra vez
     startCount = millis(); // empieza el contador
     firstPress = true; // Flag de 1er pulsacion
     botonPress = false; // bajamos la Flag de boton presionado
@@ -96,28 +96,32 @@ void loop()
     { 
       ledflash(3);
       int speed;
-      MCUCR &= ~(1 << ISC01); //Desactivamos interrupciones
-      GIMSK &= ~(1 << INT0); 
+      //MCUCR &= ~(1 << ISC01); //Desactivamos interrupciones
+      //GIMSK &= ~(1 << INT0); 
       delay(50);
-      while (digitalRead(botonPin) == HIGH)
+      while (!botonPress)
       { 
         //speed = map(analogRead(A0), 450, 1023, 1, 1000);
         //digiPotWrite(int(random(0, 130)));
         for(int i=0; i<=100; i+=25){
           digiPotWrite(i);
           delay(map(analogRead(A0), 450, 1023, 100, 1000));
+          if (botonPress){break;}
         }
         for(int i=100; i>=0; i-=25){
           digiPotWrite(i);
           delay(map(analogRead(A0), 450, 1023, 100, 1000));
+          if (botonPress){break;}
         }
       }
+      botonPress = false;
       digiPotWrite(potRes_int);
       delay(100);
-      MCUCR |= (1 << ISC01); // activamos interrupciones
-      GIMSK |= (1 << INT0); 
+     // MCUCR |= (1 << ISC01); // activamos interrupciones
+     // GIMSK |= (1 << INT0); 
     }
   }
+  Overflow(3000);
 }
 
 
@@ -246,6 +250,18 @@ byte tappedByte(){
     potRes_int = 255;
   }
   return potRes_int;
+}
+
+void Overflow(int timeout)
+{
+  if (firstPress)
+  {
+    unsigned long currentMillis_OF = millis();
+    if ((currentMillis_OF - startCount) >= timeout)
+    {
+      firstPress = false;
+    }
+  }
 }
 
 
