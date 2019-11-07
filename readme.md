@@ -1,6 +1,6 @@
-#Attiny85 Tap-Tempo para PT2399 delay
+# Attiny85 Tap-Tempo para PT2399 delay
 
-##Setup y Hardware:
+## Setup y Hardware:
 Se utiliza el microcontrolador Attiny85. 
 El pin de RESET se usa como entrada analogica para ADC, por lo cual, segun el datasheet, no podemos poner ese puerto a menos de 2,2 volts porque se reinicia el microcontrolador. 
 Para programar el Attiny con ICSP hay que poner el potenciometro de Rate/Time al minimo ya que parece ser que al ser programado, el pin de RESET necesita ser puesto a 0 V, y la impedancia del puerto RST del programador no es lo suficientemente baja como para bajar el pin de 5V a 0. 
@@ -9,7 +9,7 @@ Para cualquier rutina relacionada con el encendido o apago del LED hay que tener
 
 La conexion para la programacion desde Arduino es la siguiente:
 Se conecta el puerto ICSP de arduino a los pines para ISP correspondientes en el Attiny dejando de lado la conexion de RST ya que de eso se va a encargar el PIN10. 
-###ICSP header: 
+### ICSP header: 
 1. MISO
 2. VCC
 3. SCK
@@ -17,10 +17,10 @@ Se conecta el puerto ICSP de arduino a los pines para ISP correspondientes en el
 5. NC (RST, pin 10)
 6. GND
 
-##Rutinas de calibracion y de operacion para controlar el tempo del chip
+## Rutinas de calibracion y de operacion para controlar el tempo del chip
 de delay PT2399 mediante potenciometro digital.
 
-###Calibracion:
+### Calibracion:
 Tanto los PT2399 como los MCP41100 vienen de fabrica con mucha dispersion entre unidades. 
 En especial los MCP41100, donde  he medido discrepancias de hasta un 30% con respecto
 al valor declarado por el fabricante.
@@ -50,7 +50,7 @@ a las variables (a, b, c) del firmware de operacion.
 - Programamos el Attiny85 con dicho firmware.
 - Marcamos los 3 chips para saber que van en el mismo pedal.
 
-###Operacion
+### Operacion
 La rutina de operacion o funciomamiento normal del controlador es muy sensilla.
 En el start-up del chip, el tempo asignado es el que este configurado en ese 
 momento en el potenciometro del ADC.
