@@ -91,28 +91,38 @@ void loop()
       potRes_int = round(potRes);
       digiPotWrite(potRes_int);
     }
-      //MODO ROBOT
+      //MODO OCULTO
     else
     { 
       ledflash(3);
-      int speed;
-      //MCUCR &= ~(1 << ISC01); //Desactivamos interrupciones
-      //GIMSK &= ~(1 << INT0); 
+      int desgaste = 1;
+      int next_shift = random(50, map(analogRead(A0), 450, 1023, 3000, 100));
+      unsigned long previousMillis_desgaste = 0;
       delay(50);
       while (!botonPress)
       { 
-        //speed = map(analogRead(A0), 450, 1023, 1, 1000);
-        //digiPotWrite(int(random(0, 130)));
-        for(int i=0; i<=100; i+=25){
-          digiPotWrite(i);
-          delay(map(analogRead(A0), 450, 1023, 100, 1000));
-          if (botonPress){break;}
+        unsigned long currentMillis_desgaste = millis();
+        if ((currentMillis_desgaste - previousMillis_desgaste) >= next_shift)
+        {
+          previousMillis_desgaste = currentMillis_desgaste;
+          digiPotWrite(potRes_int + random(-desgaste, desgaste));
+          next_shift = random(50, map(analogRead(A0), 450, 1023, 3000, 100));
         }
-        for(int i=100; i>=0; i-=25){
-          digiPotWrite(i);
-          delay(map(analogRead(A0), 450, 1023, 100, 1000));
-          if (botonPress){break;}
-        }
+
+
+
+//        //speed = map(analogRead(A0), 450, 1023, 1, 1000);
+//        //digiPotWrite(int(random(0, 130)));
+//        for(int i=0; i<=100; i+=25){
+//          digiPotWrite(i);
+//          delay(map(analogRead(A0), 450, 1023, 100, 1000));
+//          if (botonPress){break;}
+//        }
+//        for(int i=100; i>=0; i-=25){
+//          digiPotWrite(i);
+//          delay(map(analogRead(A0), 450, 1023, 100, 1000));
+//          if (botonPress){break;}
+//        }
       }
       botonPress = false;
       digiPotWrite(potRes_int);

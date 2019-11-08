@@ -38,7 +38,7 @@
 				previousMillis = currentMillis
 				ejecutar_funcion
 
-7. Tape modulation:
+7. Tape modulation: EN DESARROLLO
 	Investigar como funciona la modulacion por cinta.
 	Se puede emular las modulaciones debido a las partes moviles del mecanismo de la maquina de eco o a la variacion de la velocidad del motor. Esto se podria hacer utilizando valores random en un rango muy limitado de delay (no mas de 20-40 ms?), apareciendo con una recurrencia tambien random. Es decir:
 	 	if (tape_modulation_set == true):
