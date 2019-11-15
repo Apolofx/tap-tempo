@@ -25,7 +25,7 @@ DECLARACION/INICIALIZACION DE VARIABLES
 byte tempo_Pot = 5, CS = 1, dataPin = 3, clockPin = 0, ledPin = 4, botonPin = 2;
 int ledState = LOW, tempo, last_read, potRes_int;
 float potRes, tappedTime, subDiv = 1.0, a = 1.2813108742542093e-05, b = 0.22416, c = -14.12274;
-unsigned long startCount, finishCount, previousMillis = 0, previousMillis_OF = 0;
+unsigned long startCount, finishCount, previousMillis = 0, previousMillis_OF = 0, previousMillis_ramp = 0;
 boolean firstPress = false, secondPress = false, boot = true;
 volatile boolean botonPress = false;
 /************************************
@@ -102,7 +102,7 @@ void loop()
       while (!botonPress)
       { 
         unsigned long currentMillis_desgaste = millis();
-        if ((currentMillis_desgaste - previousMillis_desgaste) >= next_shift)
+        if (abs(currentMillis_desgaste - previousMillis_desgaste) >= next_shift)
         {
           previousMillis_desgaste = currentMillis_desgaste;
           digiPotWrite(potRes_int + random(-desgaste, desgaste));
@@ -125,8 +125,9 @@ void loop()
 //        }
       }
       botonPress = false;
-      digiPotWrite(potRes_int);
       delay(100);
+      last_read = analogRead(A0);
+      digiPotWrite(potRes_int);
      // MCUCR |= (1 << ISC01); // activamos interrupciones
      // GIMSK |= (1 << INT0); 
     }
@@ -283,50 +284,29 @@ void Overflow(int timeout)
 /************************************************************************
                 C O D I G O  E N  C O N S T R U C C I O N
 *************************************************************************/
-/*
-switch (subDiv) {
-case 1:
-potRes = (a * pow(tappedTime, 2.0) + b * (tappedTime) + c);
-potRes_int = round(potRes);
-if (potRes_int > 127){
-potRes_int = 127;
-}
-digiPotWrite(potRes_int);
-break;
-case 2:
-potRes = (a * pow(tappedTime * 0.5, 2.0) + b * (tappedTime * 0.5) + c);
-potRes_int = round(potRes);
-if (potRes_int > 127){
-potRes_int = 127;
-}
-digiPotWrite(potRes_int);
-break;
-case 3:
-potRes = (a * pow(tappedTime * 0.25, 2.0) + b * (tappedTime * 0.25) + c);
-potRes_int = round(potRes);
-if (potRes_int > 127){
-potRes_int = 127;
-}
-digiPotWrite(potRes_int);
-break;
-case 4:
-potRes = (a * pow(tappedTime * 0.75, 2.0) + b * (tappedTime * 0.75) + c);
-potRes_int = round(potRes);
-if (potRes_int > 127){
-potRes_int = 127;
-}
-digiPotWrite(potRes_int);
-break;
-case 5:
-potRes = (a * pow(tappedTime * 0.333, 2.0) + b * (tappedTime * 0.333) + c);
-potRes_int = round(potRes);
-if (potRes_int > 127){
-potRes_int = 127;
-}
-digiPotWrite(potRes_int);
-break;
-default:
-return 0;
-// do something
-}
-*/
+void Ramp()
+{
+  if (rampStart)
+  {
+    unsigned long currentMillis_ramp = millis();
+    if (((currentMillis_ramp - previousMillis_ramp) >= 2000) && (digitalRead(botonPin) == LOW))
+    {
+      previousMillis_ramp = currentMillis_ramp;
+      firstPress = false;
+      botonPress = false;
+      digitalWrite(ledPin, LOW);
+      while(digitalRead(botonPin) == HIGH)
+      {
+        for (int i = 0; i <= 128; i++)
+        {
+          digiPotWrite(i);
+          delay(1);
+        }
+        digiPotWrite(0);
+      }
+      firstPress = false;
+      botonPress = false;
+      digiPotWrite(tappedTime);
+    }
+  }
+}  
