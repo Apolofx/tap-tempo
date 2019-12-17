@@ -3,7 +3,7 @@ arr = list()
 for i in range(0, 256):
     arr.append(i)
 delay = list()
-delay = list(map(lambda var: int(var.strip(',')), input("Pega aca el array de delays:\n").split()))
+delay = list(map(lambda var: int(float(var.strip(','))), input("Pega aca el array de delays:\n").split()))
 for i in delay:
 	i = int(i)
 poly = np.polyfit(delay, arr, 2)
